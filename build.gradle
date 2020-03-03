@@ -48,7 +48,7 @@ jib {
     allowInsecureRegistries = true
 
     from {
-        image = 'qaware/zulu-centos-payara-micro:8u242-5.201'
+        image = 'qaware/distroless-zulu-payara-micro:8u242-5.201'
     }
     container {
         appRoot = '/opt/payara/deployments/ROOT.war'

@@ -1,4 +1,4 @@
-FROM qaware/zulu-centos-payara-micro:8u242-5.201
+FROM qaware/distroless-zulu-payara-micro:8u242-5.201
 COPY build/libs/realistic-cloud-native-devel.war $DEPLOY_DIR
 
 # RUN java -jar /opt/payara/payara-micro.jar --rootdir /opt/payara/root --warmup $DEPLOY_DIR/realistic-cloud-native-devel.war
