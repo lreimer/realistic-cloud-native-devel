@@ -11,12 +11,25 @@ plugins {
     id 'com.google.cloud.tools.jib' version '1.8.0'
 }
 
+sourceCompatibility = 1.8
+
 repositories {
     jcenter()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
 }
 
 dependencies {
     providedCompile 'jakarta.platform:jakarta.jakartaee-api:8.0.0'
+
+    // mandatory dependencies for using Spock
+    testCompile "org.codehaus.groovy:groovy-all:2.5.7"
+    testCompile "org.spockframework:spock-core:1.3-groovy-2.5"
+
+    // optional dependencies for using Spock
+    testCompile "org.hamcrest:hamcrest-core:1.3"    // only necessary if Hamcrest matchers are used
+    testRuntime "net.bytebuddy:byte-buddy:1.9.3"    // allows mocking of classes (in addition to interfaces)
+    testRuntime "org.objenesis:objenesis:2.6"       // allows mocking of classes without default constructor (together with CGLIB)
+
 }
 
 payaraMicro {
