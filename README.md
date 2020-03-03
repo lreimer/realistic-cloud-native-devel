@@ -1,4 +1,4 @@
-# Productive yet Realistic Development of Cloud-native Applications
+# Realistic Development of Cloud-native Applications
 
 ## Maintainer
 
