@@ -2,6 +2,8 @@
 
 ## Using Docker BuildKit
 
+- https://github.com/moby/buildkit
+
 ```bash
 $ DOCKER_BUILDKIT=1 docker build -t realistic-cloud-native-devel .
 ```
@@ -111,6 +113,8 @@ $ http get microservice.demo:8080/api/weather
 
 ## Using Telepresence
 
+https://www.telepresence.io/tutorials/docker
+
 ```bash
 $ brew cask install osxfuse
 $ brew install datawire/blackbird/telepresence
@@ -136,8 +140,17 @@ $ kubectl port-forward deployment/microservice 9090:8080
 $ http get localhost:9090
 ```
 
+## Using Squash
+
+- https://squash.solo.io/overview/
+
+```bash
+$ brew install solo-io/tap/squashctl
+```
+
 ## Further References
 
+- https://squash.solo.io/overview/
 - https://github.com/moby/buildkit
 - https://github.com/ksync/ksync
 
