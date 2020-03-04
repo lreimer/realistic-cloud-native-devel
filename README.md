@@ -109,6 +109,33 @@ $ kubefwd svc -n default -l tier=backend -d demo
 $ http get microservice.demo:8080/api/weather
 ```
 
+## Using Telepresence
+
+```bash
+$ brew cask install osxfuse
+$ brew install datawire/blackbird/telepresence
+
+$ brew unlink python@2
+$ brew link python@3
+
+$ kubectl run hello-world --image=datawire/hello-world --port 8000 --expose
+$ telepresence --docker-run --rm -it pstauffer/curl curl http://hello-world:8000/
+
+$ kubectl port-forward deployment/microservice 9090:8080
+$ http get localhost:9090
+
+# make some changes to the WeatherResource
+$ docker build -t realistic-cloud-native-devel .
+$ telepresence --swap-deployment microservice --docker-run --rm -it realistic-cloud-native-devel
+
+$ kubectl port-forward deployment/microservice 9090:8080
+$ http get localhost:9090
+
+# terminate Telepresence
+$ kubectl port-forward deployment/microservice 9090:8080
+$ http get localhost:9090
+```
+
 ## Further References
 
 - https://github.com/moby/buildkit
