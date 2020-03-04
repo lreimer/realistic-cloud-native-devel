@@ -10,6 +10,15 @@ services:
     deploy:
       replicas: 2
 
+  hoverfly:
+    image: "spectolabs/hoverfly:v1.1.4"
+    command: -import /simulations/weather.json
+    volumes:
+      - ./src/test/resources/hoverfly:/simulations
+    ports:
+      - "8888:8888"
+      - "8500:8500"
+
   database:
     image: postgres:12.2-alpine
     environment:

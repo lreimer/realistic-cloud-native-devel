@@ -1,0 +1,101 @@
+{
+	"data": {
+		"pairs": [
+			{
+				"request": {
+					"path": [
+						{
+							"matcher": "exact",
+							"value": "/data/2.5/weather"
+						}
+					],
+					"method": [
+						{
+							"matcher": "exact",
+							"value": "GET"
+						}
+					],
+					"destination": [
+						{
+							"matcher": "exact",
+							"value": "samples.openweathermap.org"
+						}
+					],
+					"scheme": [
+						{
+							"matcher": "exact",
+							"value": "https"
+						}
+					],
+					"query": {
+						"appid": [
+							{
+								"matcher": "exact",
+								"value": "b6907d289e10d714a6e88b30761fae22"
+							}
+						],
+						"q": [
+							{
+								"matcher": "exact",
+								"value": "London,uk"
+							}
+						]
+					}
+				},
+				"response": {
+					"status": 200,
+					"body": "H4sIAAAAAAAAAz2QzW7DIBCEXyXaM7UW/8Q2x6pSL32DqqqIQclKGFuA2yZW3r0LVcoJ1rOfZ2aHaVmCAbWDWzyoJ6xkI8DpBKqTVSfvAr6tThcbQL3vQCxtEAXMmlgOL4FuN2dBgLFxCrQmyhhwdL6kA/lkfaR0PZh/HU1FgKOB+4eAk46W9THpvBkZ9EfeIdl5BVUPWDW1gDXYGLfAWomS35dtJsNkUIMURfs5Z0d1P1aye0z0TyZInnCOL4p0IleWJPLhaORL9rhay5e2YpaxZ4YiL0xu2UzM3WjnQI15ZrgY2Q5dP4zHTIjXIkjXNVsTpaAOR77NbFifeYoVSuRSp2XzKbBjeH3mnHHzgXL4gjvW2PRlGO3jF2M79Nl4Lr0+tk3fMsXrmXfgbfGGi8zU/BXx/gvtT3EsywEAAA==",
+					"encodedBody": true,
+					"headers": {
+						"Cache-Control": [
+							"max-age=0, private, must-revalidate"
+						],
+						"Content-Encoding": [
+							"gzip"
+						],
+						"Content-Type": [
+							"application/json; charset=utf-8"
+						],
+						"Date": [
+							"Wed, 04 Mar 2020 09:36:37 GMT"
+						],
+						"Etag": [
+							"W/\"e70c27085ed41de5321252b16c9582fe\""
+						],
+						"Hoverfly": [
+							"Was-Here"
+						],
+						"Server": [
+							"openresty/1.9.7.1"
+						],
+						"X-Content-Type-Options": [
+							"nosniff"
+						],
+						"X-Frame-Options": [
+							"SAMEORIGIN"
+						],
+						"X-Request-Id": [
+							"dd9a59c4-4621-4f86-8e94-ec0c95d929fa"
+						],
+						"X-Runtime": [
+							"0.001033"
+						],
+						"X-Xss-Protection": [
+							"1; mode=block"
+						]
+					},
+					"templated": false
+				}
+			}
+		],
+		"globalActions": {
+			"delays": [],
+			"delaysLogNormal": []
+		}
+	},
+	"meta": {
+		"schemaVersion": "v5",
+		"hoverflyVersion": "v1.1.4",
+		"timeExported": "2020-03-04T10:37:26+01:00"
+	}
+}

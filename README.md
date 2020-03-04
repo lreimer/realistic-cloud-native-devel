@@ -57,8 +57,33 @@ $ kompose convert --chart --out charts
 
 ## Using Hoverfly
 
+https://docs.hoverfly.io/en/latest/pages/introduction/downloadinstallation.html
+
 ```bash
-$ 
+$ brew install SpectoLabs/tap/hoverfly
+
+$ hoverctl version
+$ hoverctl targets
+
+$ hoverctl start
+$ open http://localhost:8888
+
+$ hoverctl mode capture
+
+$ export HTTP_PROXY=http://localhost:8500
+$ export HTTPS_PROXY=http://localhost:8500
+
+$ http --verify=no get https://samples.openweathermap.org/data/2.5/weather q==London,uk appid==b6907d289e10d714a6e88b30761fae22
+
+$ hoverctl mode simulate
+$ http --verify=no get https://samples.openweathermap.org/data/2.5/weather q==London,uk appid==b6907d289e10d714a6e88b30761fae22
+
+$ http --verify=no get https://samples.openweathermap.org/data/2.5/weather q==Rosenheim,de appid==b6907d289e10d714a6e88b30761fae22
+$ hoverctl mode spy
+
+$ hoverctl stop
+$ docker-compose up
+$ hoverctl mode simulate -t docker
 ```
 
 
@@ -66,11 +91,10 @@ $
 
 ```bash
 $ brew install kubefwd
+$ scoop install kubefwd
 
 $ kubefwd svc -n default -l env=dev
 ```
-
-
 
 
 ## Maintainer
