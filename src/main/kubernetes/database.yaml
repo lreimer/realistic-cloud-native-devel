@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    tier: db
+    io.kompose.service: database
+  name: database
+spec:
+  ports:
+    - name: "3306"
+      port: 3306
+      targetPort: 3306
+  selector:
+    io.kompose.service: database
+    tier: db
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: database-env
+data:
+  POSTGRES_DB: example
+  POSTGRES_PASSWORD: password
+  POSTGRES_USER: user
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: database
+  name: database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: database
+      tier: db
+  template:
+    metadata:
+      labels:
+        io.kompose.service: database
+        tier: db
+    spec:
+      containers:
+        - name: database
+          image: postgres:12.2-alpine
+          imagePullPolicy: "IfNotPresent"
+          envFrom:
+            - configMapRef:
+                name: database-env
+          ports:
+            - containerPort: 3306

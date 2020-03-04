@@ -85,13 +85,18 @@ $ hoverctl mode simulate -t docker
 
 ## Using kubefwd
 
+https://github.com/txn2/kubefwd
+
 ```bash
 $ brew install kubefwd
 $ scoop install kubefwd
 
-$ kubefwd svc -n default -l env=dev
-```
+$ kubefwd svc -n default
+$ http get microservice:8080/api/weather
 
+$ kubefwd svc -n default -l tier=backend -d demo
+$ http get microservice.demo:8080/api/weather
+```
 
 ## Maintainer
 
