@@ -14,7 +14,7 @@ import static org.hamcrest.Matchers.containsString
 import static spock.util.matcher.HamcrestSupport.expect
 
 @Testcontainers
-class NginxContainerTest extends Specification {
+class NginxContainerSpec extends Specification {
 
     @Rule
     public NginxContainer nginx = new NginxContainer<>().waitingFor(new HttpWaitStrategy())

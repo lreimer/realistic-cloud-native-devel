@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  microservice:
+    build:
+      context: .
+    image: lreimer/realistic-cloud-native-devel
+    ports:
+      - "8080:8080"
+    deploy:
+      replicas: 2
+
+  database:
+    image: postgres:12.2-alpine
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: example
+    ports:
+      - "3306:3306"

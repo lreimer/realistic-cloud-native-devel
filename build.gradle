@@ -28,6 +28,9 @@ dependencies {
     testCompile "org.testcontainers:spock:1.12.5"
     testCompile "org.testcontainers:nginx:1.12.5"
 
+    testCompile "org.testcontainers:postgresql:1.12.5"
+    testCompile 'org.postgresql:postgresql:42.2.10'
+
     testCompile 'io.rest-assured:rest-assured:4.2.0'
 
     // optional dependencies for using Spock
