@@ -151,7 +151,6 @@ $ brew install solo-io/tap/squashctl
 ## Further References
 
 - https://squash.solo.io/overview/
-- https://github.com/moby/buildkit
 - https://github.com/ksync/ksync
 
 ## Maintainer
