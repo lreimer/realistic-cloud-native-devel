@@ -14,7 +14,7 @@ public class WeatherResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getWeather(@QueryParam("q") @DefaultValue("Rosenheim") String q) {
-        Map<String, String> data = Collections.singletonMap(q, "sunshine");
+        Map<String, String> data = Collections.singletonMap(q, "Sunshine");
         return Response.ok(data).build();
     }
 }

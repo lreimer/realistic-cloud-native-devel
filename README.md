@@ -12,6 +12,21 @@ $ docker-compose start
 $ docker-compose down
 ```
 
+## Using TestContainers
+
+```groovy
+dependencies {
+    testCompile "org.testcontainers:spock:1.12.5"
+    testCompile "org.testcontainers:nginx:1.12.5"
+
+    testCompile "org.testcontainers:postgresql:1.12.5"
+    testCompile 'org.postgresql:postgresql:42.2.10'
+}
+```
+
+
+
+
 ## Docker Stack and Kubernetes
 
 https://github.com/docker/compose-on-kubernetes/blob/master/README.md
@@ -40,14 +55,21 @@ $ kompose convert --controller=deployment --out kubernetes
 $ kompose convert --chart --out charts
 ```
 
+## Using Hoverfly
+
+```bash
+$ 
+```
+
+
 ## Using kubefwd
 
 ```bash
 $ brew install kubefwd
 
+$ kubefwd svc -n default -l env=dev
 ```
 
-## Using Hoverfly
 
 
 
