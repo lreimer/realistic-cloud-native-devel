@@ -1,5 +1,16 @@
 # Realistic Development of Cloud-native Applications
 
+## Using Docker BuildKit
+
+```bash
+$ DOCKER_BUILDKIT=1 docker build -t realistic-cloud-native-devel .
+```
+
+```json
+{"debug":true,"experimental":true,"features":{"buildkit":true}}
+```
+
+
 ## Using Docker Compose
 
 ```bash
@@ -97,6 +108,11 @@ $ http get microservice:8080/api/weather
 $ kubefwd svc -n default -l tier=backend -d demo
 $ http get microservice.demo:8080/api/weather
 ```
+
+## Further References
+
+- https://github.com/moby/buildkit
+- https://github.com/ksync/ksync
 
 ## Maintainer
 
