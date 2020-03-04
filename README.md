@@ -24,9 +24,6 @@ dependencies {
 }
 ```
 
-
-
-
 ## Docker Stack and Kubernetes
 
 https://github.com/docker/compose-on-kubernetes/blob/master/README.md
@@ -85,7 +82,6 @@ $ hoverctl stop
 $ docker-compose up
 $ hoverctl mode simulate -t docker
 ```
-
 
 ## Using kubefwd
 
