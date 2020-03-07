@@ -31,8 +31,6 @@ class PostgreContainerSpec extends Specification {
 
     def "Select 1 from PostgreSQL"() {
         given:
-
-
         def statement = connection.prepareStatement("SELECT 1")
 
         when:
